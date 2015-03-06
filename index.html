@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--/**                                                                                
+                        .-----------------------.                               
+                  `-----`                       `.----.                         
+              `---.                                   `---.                     
+           .--.                                           `---                  
+        .--`                                                  --.               
+ -/-. --.                                                       `-- `-::        
+ yMMMMNhs/-                                                   ./oymMMMMN        
+ odyNddmNMMNdo:                                           -+hNMMMNmdMhdy`       
+ /`/d::::/+oydNNh+`                                    :yNNdys+/::::ss /`       
+ / m+::::::::::yMMMh/                               -yNMMd:::::::::::N.:`       
+ /.M::::::::::oMMMMMMNo`                         `+mMMMMMMy::::::::::d+/        
+ /-M::::::::::sMMMMMMMMMs.                     `+NMMMMMMMMd::::::::::m+/        
+ `/No::::::::::dMMMMMMMNsyo`                  /hoNMMMMMMMm/:::::::::/M+-        
+  /sm:::::::::::+ydmmhs/::/y:               .y+:::ohdmdho:::::::::::hd/         
+   +dd::::::::::::::::::::::oo`            /s::::::::::::::::::::::yN+`         
+   ./hm+:::::::::::::::::::::/s.    -     o+:::::::::::::::::::::/hm/-          
+    .:+Nh/:::::::::::::::::::::h.  `m.   y/::::::::::::::::::::/sNs--           
+     .:`omdo/:::::::::::::::+yy:   yMd`  .syo::::::::::::::::ohNs.--            
+      `/` :sdmhso+////++syhy+.   `yMMMd.   `/shyso+////+osydmy/` :.             
+        --   `-/+ssyyso+:.      /NMMMMMNo      `:/osyyyso/-`   -:               
+         `:-                    .mMMMMMN:                    .:`                
+           `:-                   .mMMMN-                   .:.                  
+              --.                 -MMM/                 `--`                    
+                `--.               oMh               .-/:.    
+                   `----`          `M-           .---`  Luis Echenique
+                        .------.``  y   `.------.                          -    
+                                `...-...``*/                                      
+-->
+<html>
+  <head>
+    <script src="js/json-sans-eval.js"></script>
+    <script src="js/css-browser-selector.js"></script>
+    <script src="js/gol-ver20150303.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="css/style.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap-theme.css" rel="stylesheet" id="bs-theme-stylesheet">
+    
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <meta name="description" content="Prueba de como analizo y resuelvo un problema con javascript en HTML5 y CSS3" />
+    <meta name="keywords" content="html, css, js, javascript, bootstrap, coway's, game of life" />
+    <meta name="author" content="Luis Echenique" />
+
+    <title>Juego de la Vida de Conway - Javascript/Canvas</title>
+  </head>
+  <body>
+    <div id="wrapper">
+
+      <div class="page-header">
+        <h1 href=".">Juego de la vida de Conway<small>por Luis Echenique</small></h1>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">Controles</div>
+        <span id="hint">Haz click en cualquier celda para que <strong>viva</strong> o <strong>muera</strong>. Usa el botón  <strong>Iniciar</strong> para comenzar</span>
+ 
+        <form action="">
+         
+          <input type="button" class="btn btn-default navbar-btn" value="Iniciar" id="buttonRun" title="Tecla: R" />
+          <input type="button" class="btn btn-default navbar-btn" value="Siguiente" id="buttonStep" title="Tecla: S" />
+          <input type="button" class="btn btn-default navbar-btn" value="Limpiar" id="buttonClear" title="Tecla: C" />
+          <input type="button" class="btn btn-default navbar-btn" value="Zoom" id="buttonZoom" title="Aumenta el tamaño de la celda"  />
+          
+         
+        </form>
+         <div class="btn btn-default navbar-btn"><a href="?autoplay=0&amp;trail=0&amp;grid=1&amp;colors=1&amp;zoom=1&amp;s=random" title="Distribución Aleatoria">Aleatorio</a></div>
+       
+      </div>
+
+          <div class="panel panel-default">
+             <div class="panel-body">
+                <canvas id="canvas" width="870" height="400"></canvas>  
+                <p class="text-right" id="layoutMessages">Zoom x1</p>
+             </div>
+             <div class="panel-footer">
+                <div class="subtitle" >Información de la Ejecución</div>
+                
+                 <p class="info"><abbr title="Generacion Actual">Generacion</abbr>: <span id="generation"></span> | <abbr title="Numero de celdas vivas">Celdas Vivas</abbr>: <span id="livecells"></span> | <abbr title="Tiempo en Ejecución: (Algoritmo / Canvas)* (Algoritmo / Average Canvas)">Tiempo de cada Estado</abbr>: <span id="steptime"></span> ms </p><span id="layoutMessages"></span>
+             </div>
+              
+          </div>
+
+      
+
+      
+
+      <div class="panel panel-default">
+        <div class="panel-heading">Configuración</div>
+        <form>
+         <input type="button" class="btn btn-default navbar-btn" id="buttonTrail" value="Rastro" title="Muestra donde hubo una celda viva luego que muere"/>
+         <input type="button" class="btn btn-default navbar-btn" id="buttonGrid" value="Grid" title="Cambia los estilos de Grid" />
+         
+         <input type="button" class="btn btn-default navbar-btn" id="buttonColors" value="Color" title="Cambia los esquemas de colores" />
+         
+        </form>
+      </div>
+      
+      
+    </div>
+  </body>
+</html>
