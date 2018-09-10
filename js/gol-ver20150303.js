@@ -166,12 +166,12 @@
          */
     init : function() {
       try {
-        this.listLife.init();   // Reset/init algorithm
-        this.loadConfig();      // Load config from URL (autoplay, colors, zoom, ...)
-        this.loadState();       // Load state from URL
-        this.keepDOMElements(); // Keep DOM References (getElementsById)
-        this.canvas.init();     // Init canvas GUI
-        this.registerEvents();  // Register event handlers
+        this.listLife.init();   // Inicia y reinicia el algoritmo
+        this.loadConfig();      // carga la configuración desde la URL (autoplay, colors, zoom, ...)
+        this.loadState();       // Carga el estado desde la URL
+        this.keepDOMElements(); // Mantiene las referencias en el DOM (getElementsById)
+        this.canvas.init();     // Inicia canvas GUI
+        this.registerEvents();  // Maneja los registro de evento
     
         this.prepare();
       } catch (e) {
